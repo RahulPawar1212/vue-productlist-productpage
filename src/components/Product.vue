@@ -25,6 +25,16 @@
             </v-col>
             
         </v-row>
+        <v-row>
+            <v-col cols="12" class="tw-text-center tw-text-2xl">
+                Specications
+            </v-col>
+        </v-row>
+        <v-row class="tw-border-2  tw-border-b-indigo-500" v-for="specs in data">
+            <div class="tw-mb-2 tw-ml-2">
+                {{ specs }}
+            </div>
+        </v-row>  
     </v-container>
     
 </template>

@@ -9,7 +9,7 @@
       </div>
       <ul class="tw-flex tw-space-x-9">
         <li>
-          <a href="#" class="tw-text-white hover:tw-text-emerald-200">
+           <a href="/" class="tw-text-white hover:tw-text-emerald-200">
             Home
           </a>
         </li>
