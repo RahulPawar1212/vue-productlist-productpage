@@ -1,6 +1,5 @@
 
 <template>
-    {{ props.productid }}
     <Suspense>
         <Product :productid=props.productid></Product> 
     </Suspense>

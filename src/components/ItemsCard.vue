@@ -6,7 +6,10 @@
   >
     <v-card-item>
       <div>
-        <v-img
+        
+      
+        <router-link :key="props.spec.id" :to="{name:'Product',params:{ productid:props.spec.id.toString()}}"> 
+          <v-img
               :src="props.spec.src"
               class="align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -14,15 +17,17 @@
               cover
             >
           </v-img>
-      
-        <router-link :key="props.spec.id" :to="{name:'Product',params:{ productid:props.spec.id.toString()}}"> 
-          <div class="text-h8 mb-3 mt-3">
-          {{props.spec.modelName}}
+
+          <div class="text-h8 mb-3 tw-mt-3 ">
+            <h1>{{props.spec.modelName}} </h1>
+          </div>
+          <div class="tw-mt-3 tw-mb-1 tw-text-green-600">
+            <h1> {{props.spec.manufacturer}}</h1>
+          </div>
+          <div class="tw-mt-3 tw-text-emerald-700">
+            <h1> {{props.spec.speciality}}</h1>
           </div>
         </router-link>
-        
-        
-        <div class="text-body-1">{{ props.spec.shortDescription }}</div>
       </div>
       </v-card-item>
     
