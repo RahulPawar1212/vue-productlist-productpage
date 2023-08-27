@@ -26,7 +26,7 @@ export const useProductStore = defineStore('product', {
       //let data = (await response.json()) as ISpecsNew;
       
       let data = productData as ISpecsNew;
-      console.log(data)
+      //console.log(data)
 
       let ids: string[] = []
       let all = new Map<string, ISpecs>()

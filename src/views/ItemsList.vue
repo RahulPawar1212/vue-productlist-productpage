@@ -1,17 +1,18 @@
 <template >
 <v-container fluid >
 
-<v-row dense v-if="!isMobile">
-    <v-col v-for="_spec in productList" :key="_spec.id" :cols="3">       
-        <ItemsCard :spec="_spec"/>        
-    </v-col>    
-</v-row>
+    <v-row>
+        <v-col>
+        <ItemsCard :specs="productList"/>
+        </v-col>
+    </v-row>
 
-<v-row dense v-if="isMobile">
+
+<!-- <v-row dense v-if="isMobile">
     <v-col v-for="_spec in productList" :key="_spec.id" :cols="12">       
         <ItemsCard :spec="_spec"/>        
     </v-col>    
-</v-row>
+</v-row> -->
 
 </v-container>
 </template>
@@ -26,9 +27,9 @@ const producStore = useProductStore();
 
 await producStore.fetchitems();
 
-const productList = producStore.filterCollections; 
+const productList = producStore.filterCollections; //Apply store getter on store action 
 
-console.log(productList)
+//console.log(productList)
 
 // Define the reactive data using ref
 const isMobile = ref(false);
@@ -39,6 +40,24 @@ function checkMobile() {
 }
 
 onMounted(checkMobile);
+
+// const filteredClients = computed(() => {
+//     const filtered = productList.filter((productList) =>
+//     productList
+//     );
+ 
+//     const flatten = [];
+//     for (const item of filtered) {
+//         const products = {
+//                 productid: item.id,
+//                 productname: item.modelName,
+//                 shortDescription: item.shortDescription,
+//                 manufacturer:item.manufacturer
+//         };
+//         flatten.push(products);
+//     }
+//     return flatten;
+// });
 
     // const specs: ISpecs[] = [
     //     {
